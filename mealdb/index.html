@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals</title>
+    <!-- link bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- styles  -->
+    <style>
+        li{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media only screen and (max-width:600px) {
+            .w-50{
+                width:100% !important;
+            }
+        }
+        #error{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- header started  -->
+<header class="container mt-3">
+    <h2 class="text-center text-success">Please Search Your Favourite Meal</h2>
+    <!-- header input and search button  -->
+    <div class="input-group mb-3 w-50 mx-auto">
+        <input type="text" class="form-control" placeholder="Enter Meal Name" aria-label="Enter Meal Name" aria-describedby="" id="search-input">
+        <button class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
+        </div>
+</header>
+<!-- header ended  -->
+<!-- main started -->
+<main class="container mt-5">
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content" id="modal-body">
+        
+    </div>
+</div>
+</div>
+<!-- meal cards  -->
+<p id="error"class="text-danger text-center">Please check your internet connection or type correct keyword.</p>
+<div class="w-100  d-none"  id="spinner">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
+
+</div>
+</main>
+<!-- javascripts  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="js/mealdb.js"></script>
+</body>
+</html>
